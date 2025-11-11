@@ -5,7 +5,8 @@ import cors from "cors";
 import express from "express";
 import { connectDB } from "./src/config/db.js";
 import authRoutes from "./src/routes/auth.js";
-import reportRoutes from "./src/routes/transactions.js";
+import transactionRoutes from "./src/routes/transactions.js";
+import reportRoutes from "./src/routes/reports.js";
 
 
 const app = express();
@@ -23,7 +24,8 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/reports', reportRoutes);
+app.use("/api/transactions", transactionRoutes);
+app.use("/api/reports", reportRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
