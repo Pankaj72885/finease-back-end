@@ -8,10 +8,10 @@ import {
   deleteTransaction,
 } from "../models/Transaction.js";
 
-const reportRoutes = express.Router();
+const transactionRoutes = express.Router();
 
 // Get all transactions for a user
-reportRoutes.get("/", verifyToken, async (req, res) => {
+transactionRoutes.get("/", verifyToken, async (req, res) => {
   try {
     const { userEmail, sortBy, sortOrder } = req.query;
 
@@ -33,7 +33,7 @@ reportRoutes.get("/", verifyToken, async (req, res) => {
 });
 
 // Get a single transaction
-reportRoutes.get("/:id", verifyToken, async (req, res) => {
+transactionRoutes.get("/:id", verifyToken, async (req, res) => {
   try {
     const { id } = req.params;
     const transaction = await getTransactionById(id);
@@ -55,7 +55,7 @@ reportRoutes.get("/:id", verifyToken, async (req, res) => {
 });
 
 // Create a new transaction
-reportRoutes.post("/", verifyToken, async (req, res) => {
+transactionRoutes.post("/", verifyToken, async (req, res) => {
   try {
     const transactionData = {
       ...req.body,
@@ -74,7 +74,7 @@ reportRoutes.post("/", verifyToken, async (req, res) => {
 });
 
 // Update a transaction
-reportRoutes.put("/:id", verifyToken, async (req, res) => {
+transactionRoutes.put("/:id", verifyToken, async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.user.uid;
@@ -95,7 +95,7 @@ reportRoutes.put("/:id", verifyToken, async (req, res) => {
 });
 
 // Delete a transaction
-reportRoutes.delete("/:id", verifyToken, async (req, res) => {
+transactionRoutes.delete("/:id", verifyToken, async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.user.uid;
@@ -115,4 +115,4 @@ reportRoutes.delete("/:id", verifyToken, async (req, res) => {
   }
 });
 
-export default reportRoutes;
+export default transactionRoutes;
