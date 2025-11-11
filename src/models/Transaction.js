@@ -36,12 +36,17 @@ export const getTransactionById = async (id, userId) => {
 
 export const updateTransaction = async (id, userId, updateData) => {
   const db = getDB();
-  const result = await db
-    .collection("transactions")
-    .updateOne(
-      { _id: new ObjectId(id), userId },
-      { $set: { ...updateData, updatedAt: new Date() } }
-    );
+
+  const { _id, ...dataToUpdate } = updateData;
+
+  if (dataToUpdate.date) {
+    dataToUpdate.date = new Date(dataToUpdate.date);
+  }
+
+  const result = await db.collection("transactions").updateOne(
+    { _id: new ObjectId(id), userId },
+    { $set: { ...dataToUpdate, updatedAt: new Date() } } 
+  );
 
   return result;
 };
@@ -57,7 +62,6 @@ export const deleteTransaction = async (id, userId) => {
 
 export const getTransactionsByCategory = async (userEmail) => {
   const db = getDB();
-
 
   const pipeline = [
     { $match: { userEmail: userEmail } },
@@ -77,7 +81,7 @@ export const getTransactionsByCategory = async (userEmail) => {
     .aggregate(pipeline)
     .toArray();
 
-    const categoryTotals = {};
+  const categoryTotals = {};
   results.forEach((result) => {
     const { category, type } = result._id;
     const amount = result.totalAmount;

@@ -33,19 +33,43 @@ transactionRoutes.get("/", verifyToken, async (req, res) => {
 });
 
 // Get a single transaction
+// transactionRoutes.get("/:id", verifyToken, async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const transaction = await getTransactionById(id);
+
+//     if (!transaction) {
+//       return res.status(404).json({ message: "Transaction not found" });
+//     }
+
+//     // Verify user owns the transaction
+//     if (transaction.userId !== req.user.uid) {
+//       return res.status(403).json({ message: "Unauthorized" });
+//     }
+
+//     res.status(200).json(transaction);
+//   } catch (error) {
+//     console.error("Error fetching transaction:", error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+
+// Get a single transaction
 transactionRoutes.get("/:id", verifyToken, async (req, res) => {
   try {
     const { id } = req.params;
-    const transaction = await getTransactionById(id);
+    const userId = req.user.uid; // <-- 1. Get the userId from the token
+
+    // 2. Pass BOTH arguments to the model function
+    const transaction = await getTransactionById(id, userId); 
 
     if (!transaction) {
+      // This now handles "Not Found" AND "Unauthorized" at the same time
       return res.status(404).json({ message: "Transaction not found" });
     }
 
-    // Verify user owns the transaction
-    if (transaction.userId !== req.user.uid) {
-      return res.status(403).json({ message: "Unauthorized" });
-    }
+    // 3. This check is no longer needed, the database already did it!
+    // if (transaction.userId !== req.user.uid) { ... }
 
     res.status(200).json(transaction);
   } catch (error) {
@@ -53,6 +77,7 @@ transactionRoutes.get("/:id", verifyToken, async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
 
 // Create a new transaction
 transactionRoutes.post("/", verifyToken, async (req, res) => {
