@@ -157,6 +157,4 @@ This project is open source and available under the [MIT License](LICENSE).
 - **GitHub:** [@Pankaj72885](https://github.com/Pankaj72885)
 - **LinkedIn:** [Pankaj Bepari](bd.linkedin.com/in/pankaj-bepari-8aa69013a)
 
-## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
