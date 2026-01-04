@@ -11,7 +11,7 @@ export const createBlog = async (blogData) => {
   return result;
 };
 
-export const getAllBlogs = async (filter = {}, limit = 20) => {
+export const getAllBlogs = async (filter = {}, limit = 100) => {
   const db = getDB();
   return await db
     .collection("blogs")
