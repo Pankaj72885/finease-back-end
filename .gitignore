@@ -1,5 +1,8 @@
 .env
-# finease-48cd9-firebase-adminsdk.json
+finease-48cd9-firebase-adminsdk.json
+check_data.js
+test_remote.js
+
 # Logs
 logs
 *.log
