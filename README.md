@@ -558,7 +558,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Pankaj Bepari**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Pankaj72885-181717?style=for-the-badge&logo=github)](https://github.com/Pankaj72885)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pankaj_Bepari-0A66C2?style=for-the-badge&logo=linkedin)](https://bd.linkedin.com/in/pankaj-bepari-8aa69013a)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pankaj_Bepari-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/pankajbepari/)
 
 _Full-Stack Developer | Node.js & Express Expert | MongoDB Specialist_
 
