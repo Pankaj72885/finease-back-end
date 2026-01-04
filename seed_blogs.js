@@ -63,7 +63,7 @@ Compound interest is your best friend. Even small amounts invested in low-cost i
     excerpt:
       "Demystifying credit scores: What they are, why they matter, and how to boost yours.",
     coverImage:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1000",
     category: "Credit",
     tags: ["Credit Score", "Loans", "Debt"],
     author: {
@@ -83,7 +83,7 @@ Compound interest is your best friend. Even small amounts invested in low-cost i
     excerpt:
       "A beginner's comparison of the two most common investment vehicles.",
     coverImage:
-      "https://images.unsplash.com/photo-1611974765270-ca1258634369?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=1000",
     category: "Investing",
     tags: ["Stocks", "Bonds", "Beginner"],
     author: {
@@ -419,7 +419,7 @@ Compound interest is your best friend. Even small amounts invested in low-cost i
       "As you earn more, you tend to spend more. This phenomenon, known as lifestyle creep, keeps many high earners living paycheck to paycheck...",
     excerpt: "How to maintain your savings rate even as your income grows.",
     coverImage:
-      "https://images.unsplash.com/photo-1556742102-de682f7e34b9?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&q=80&w=1000",
     category: "Psychology",
     tags: ["Lifestyle", "Wealth", "Mindset"],
     author: {
@@ -439,7 +439,7 @@ Compound interest is your best friend. Even small amounts invested in low-cost i
     excerpt:
       "Expert predictions for the coming year in the global financial markets.",
     coverImage:
-      "https://images.unsplash.com/photo-1611974765270-ca1258634369?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000",
     category: "Investing",
     tags: ["Market", "Trends", "2026"],
     author: {
