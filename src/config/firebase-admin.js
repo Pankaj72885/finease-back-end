@@ -1,24 +1,44 @@
 import admin from "firebase-admin";
+import { createRequire } from "module";
 
+const require = createRequire(import.meta.url);
+
+let serviceAccount;
+
+// Try loading from Environment Variables first
 if (
-  !process.env.FIREBASE_PROJECT_ID ||
-  !process.env.FIREBASE_CLIENT_EMAIL ||
-  !process.env.FIREBASE_PRIVATE_KEY
+  process.env.FIREBASE_PROJECT_ID &&
+  process.env.FIREBASE_CLIENT_EMAIL &&
+  process.env.FIREBASE_PRIVATE_KEY
 ) {
-  throw new Error("Missing Firebase environment variables");
+  serviceAccount = {
+    project_id: process.env.FIREBASE_PROJECT_ID,
+    client_email: process.env.FIREBASE_CLIENT_EMAIL,
+    private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+  };
+} else {
+  // Fallback to local file
+  try {
+    // Adjust path based on your directory structure.
+    // If this file is in src/config, root is two levels up.
+    serviceAccount = require("../../finease-48cd9-firebase-adminsdk.json");
+  } catch (error) {
+    console.warn(
+      "Warning: Firebase credentials not found in Env Vars or local file."
+    );
+  }
 }
 
-const serviceAccount = {
-  project_id: process.env.FIREBASE_PROJECT_ID,
-  client_email: process.env.FIREBASE_CLIENT_EMAIL,
-  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
-};
-
 if (!admin.apps.length) {
-  // prevents reinitialization in dev/hot reload
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
+  if (serviceAccount) {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+  } else {
+    console.error(
+      "ERROR: Firebase Admin could not be initialized. Missing credentials."
+    );
+  }
 }
 
 export default admin;
