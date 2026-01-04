@@ -52,7 +52,11 @@ const startServer = async () => {
   }
 };
 
-startServer();
+if (process.env.VERCEL !== "1") {
+  startServer();
+}
+
+export default app;
 
 // Handle unhandled promise rejections
 process.on("unhandledRejection", (err) => {
