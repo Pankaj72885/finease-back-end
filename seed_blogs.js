@@ -12,11 +12,14 @@ const blogs = [
     title: "Mastering Personal Finance: A Beginner's Guide",
     content: `Managing your personal finances might seem daunting, but it's a crucial skill for achieving financial freedom. In this guide, we'll walk you through the basics of budgeting, saving, and investing.
 
-    ### 1. Create a Budget
-    The first step is understanding where your money goes. Use apps like FinEase to track your income and expenses. A simple 50/30/20 rule (50% needs, 30% wants, 20% savings) is a great place to start.
+### 1. Create a Budget
+The first step is understanding where your money goes. Use apps like FinEase to track your income and expenses. A simple 50/30/20 rule (50% needs, 30% wants, 20% savings) is a great place to start.
 
-    ### 2. Build an Emergency Fund
-    Life is unpredictable. Aim to save 3-6 months' worth of living expenses in a separate account. This safety net will protect you from debt when unexpected expenses arise.`,
+### 2. Build an Emergency Fund
+Life is unpredictable. Aim to save 3-6 months' worth of living expenses in a separate account. This safety net will protect you from debt when unexpected expenses arise.
+
+### 3. Start Investing Early
+Compound interest is your best friend. Even small amounts invested in low-cost index funds can grow significantly over time. Don't wait for "the right time" to start—time in the market beats timing the market.`,
     excerpt:
       "Learn the fundamentals of budgeting, saving, and investing to take control of your financial future.",
     coverImage:
@@ -28,10 +31,10 @@ const blogs = [
       email: "demo@finease.com",
       photo: "",
     },
-    likes: 12,
+    likes: 124,
     readTime: "3 min read",
-    createdAt: new Date(Date.now() - 86400000 * 2), // 2 days ago
-    updatedAt: new Date(Date.now() - 86400000 * 2),
+    createdAt: new Date("2025-10-05"),
+    updatedAt: new Date("2025-10-05"),
   },
   {
     title: "5 Tips to Save Money on Groceries",
@@ -48,10 +51,10 @@ const blogs = [
       email: "alice@example.com",
       photo: "https://randomuser.me/api/portraits/women/44.jpg",
     },
-    likes: 45,
+    likes: 245,
     readTime: "2 min read",
-    createdAt: new Date(Date.now() - 86400000 * 5),
-    updatedAt: new Date(Date.now() - 86400000 * 5),
+    createdAt: new Date("2025-10-12"),
+    updatedAt: new Date("2025-10-12"),
   },
   {
     title: "Understanding Credit Scores",
@@ -68,10 +71,10 @@ const blogs = [
       email: "demo@finease.com",
       photo: "",
     },
-    likes: 8,
+    likes: 89,
     readTime: "4 min read",
-    createdAt: new Date(Date.now() - 86400000 * 10),
-    updatedAt: new Date(Date.now() - 86400000 * 10),
+    createdAt: new Date("2025-10-15"),
+    updatedAt: new Date("2025-10-15"),
   },
   {
     title: "Investing 101: Stocks vs Bonds",
@@ -90,8 +93,8 @@ const blogs = [
     },
     likes: 156,
     readTime: "6 min read",
-    createdAt: new Date(Date.now() - 86400000 * 1),
-    updatedAt: new Date(Date.now() - 86400000 * 1),
+    createdAt: new Date("2025-10-20"),
+    updatedAt: new Date("2025-10-20"),
   },
   {
     title: "The Rise of Cryptocurrency in 2026",
@@ -110,8 +113,8 @@ const blogs = [
     },
     likes: 210,
     readTime: "8 min read",
-    createdAt: new Date(Date.now() - 86400000 * 12),
-    updatedAt: new Date(Date.now() - 86400000 * 12),
+    createdAt: new Date("2025-10-25"),
+    updatedAt: new Date("2025-10-25"),
   },
   {
     title: "How to Retire Early (FIRE Movement)",
@@ -130,8 +133,8 @@ const blogs = [
     },
     likes: 89,
     readTime: "10 min read",
-    createdAt: new Date(Date.now() - 86400000 * 20),
-    updatedAt: new Date(Date.now() - 86400000 * 20),
+    createdAt: new Date("2025-11-01"),
+    updatedAt: new Date("2025-11-01"),
   },
   {
     title: "Tech Tools for Better Money Management",
@@ -149,8 +152,8 @@ const blogs = [
     },
     likes: 34,
     readTime: "4 min read",
-    createdAt: new Date(Date.now() - 86400000 * 15),
-    updatedAt: new Date(Date.now() - 86400000 * 15),
+    createdAt: new Date("2025-11-05"),
+    updatedAt: new Date("2025-11-05"),
   },
   {
     title: "Real Estate vs. Stocks: Where to Invest?",
@@ -169,8 +172,8 @@ const blogs = [
     },
     likes: 67,
     readTime: "7 min read",
-    createdAt: new Date(Date.now() - 86400000 * 25),
-    updatedAt: new Date(Date.now() - 86400000 * 25),
+    createdAt: new Date("2025-11-10"),
+    updatedAt: new Date("2025-11-10"),
   },
   {
     title: "Minimalism and Money",
@@ -189,8 +192,8 @@ const blogs = [
     },
     likes: 92,
     readTime: "5 min read",
-    createdAt: new Date(Date.now() - 86400000 * 3),
-    updatedAt: new Date(Date.now() - 86400000 * 3),
+    createdAt: new Date("2025-11-15"),
+    updatedAt: new Date("2025-11-15"),
   },
   {
     title: "Understanding Taxes for Freelancers",
@@ -208,8 +211,8 @@ const blogs = [
     },
     likes: 21,
     readTime: "6 min read",
-    createdAt: new Date(Date.now() - 86400000 * 30),
-    updatedAt: new Date(Date.now() - 86400000 * 30),
+    createdAt: new Date("2025-11-20"),
+    updatedAt: new Date("2025-11-20"),
   },
   {
     title: "The Psychology of Spending",
@@ -228,8 +231,8 @@ const blogs = [
     },
     likes: 115,
     readTime: "8 min read",
-    createdAt: new Date(Date.now() - 86400000 * 8),
-    updatedAt: new Date(Date.now() - 86400000 * 8),
+    createdAt: new Date("2025-11-25"),
+    updatedAt: new Date("2025-11-25"),
   },
   {
     title: "Side Hustles to Boost Your Income",
@@ -247,8 +250,207 @@ const blogs = [
     },
     likes: 230,
     readTime: "9 min read",
-    createdAt: new Date(Date.now() - 86400000 * 18),
-    updatedAt: new Date(Date.now() - 86400000 * 18),
+    createdAt: new Date("2025-12-01"),
+    updatedAt: new Date("2025-12-01"),
+  },
+  // New 10+ entries
+  {
+    title: "Inflation: What It Is and How to Prepare",
+    content:
+      "Inflation erodes purchasing power over time. While low inflation is normal, high inflation can be damaging. Here is how to hedge against it...",
+    excerpt:
+      "Protect your wealth from the eroding effects of rising prices with these strategies.",
+    coverImage:
+      "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&q=80&w=1000",
+    category: "Economy",
+    tags: ["Education", "Inflation", "Economy"],
+    author: {
+      name: "iear idang",
+      email: "demo@finease.com",
+      photo: "",
+    },
+    likes: 78,
+    readTime: "5 min read",
+    createdAt: new Date("2025-12-05"),
+    updatedAt: new Date("2025-12-05"),
+  },
+  {
+    title: "Choosing the Right Insurance Policy",
+    content:
+      "Insurance is a critical component of a solid financial plan. From life to health to auto, knowing what coverage you need can save you thousands...",
+    excerpt:
+      "Navigate the complex world of insurance with this comprehensive guide.",
+    coverImage:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000",
+    category: "Insurance",
+    tags: ["Insurance", "Health", "Life"],
+    author: {
+      name: "John Policy",
+      email: "john@example.com",
+      photo: "https://randomuser.me/api/portraits/men/11.jpg",
+    },
+    likes: 42,
+    readTime: "6 min read",
+    createdAt: new Date("2025-12-08"),
+    updatedAt: new Date("2025-12-08"),
+  },
+  {
+    title: "The Snowball vs. Avalanche Method",
+    content:
+      "Paying off debt is hard, but having a strategy helps. The Snowball method focuses on small debts for psychological wins, while Avalanche targets high interest...",
+    excerpt:
+      "Which debt payoff strategy is right for you? We break down the pros and cons.",
+    coverImage:
+      "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=1000",
+    category: "Debt",
+    tags: ["Debt", "Strategy", "Tips"],
+    author: {
+      name: "iear idang",
+      email: "demo@finease.com",
+      photo: "",
+    },
+    likes: 189,
+    readTime: "4 min read",
+    createdAt: new Date("2025-12-12"),
+    updatedAt: new Date("2025-12-12"),
+  },
+  {
+    title: "Negotiating Your Salary Like a Pro",
+    content:
+      "Your starting salary can dictate your earnings for years. Learn the art of negotiation to ensure you are paid what you are worth...",
+    excerpt:
+      "Don't leave money on the table. Techniques for successful salary negotiation.",
+    coverImage:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1000",
+    category: "Career",
+    tags: ["Career", "Salary", "Negotiation"],
+    author: {
+      name: "Career Coach",
+      email: "coach@example.com",
+      photo: "https://randomuser.me/api/portraits/women/89.jpg",
+    },
+    likes: 312,
+    readTime: "7 min read",
+    createdAt: new Date("2025-12-15"),
+    updatedAt: new Date("2025-12-15"),
+  },
+  {
+    title: "Sustainable Investing (ESG)",
+    content:
+      "Environmental, Social, and Governance (ESG) investing allows you to align your portfolio with your values without sacrificing returns...",
+    excerpt:
+      "How to build a portfolio that does good for the world and your wallet.",
+    coverImage:
+      "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&q=80&w=1000",
+    category: "Investing",
+    tags: ["ESG", "Green", "Investing"],
+    author: {
+      name: "Green Investor",
+      email: "green@example.com",
+      photo: "https://randomuser.me/api/portraits/men/4.jpg",
+    },
+    likes: 98,
+    readTime: "5 min read",
+    createdAt: new Date("2025-12-18"),
+    updatedAt: new Date("2025-12-18"),
+  },
+  {
+    title: "Travel Hacking for Beginners",
+    content:
+      "Want to travel the world for free? Credit card points and airline miles can make it happen if you use them responsibly...",
+    excerpt:
+      "Unlock the secrets of free travel using credit cards and loyalty programs.",
+    coverImage:
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1000",
+    category: "Lifestyle",
+    tags: ["Travel", "Hacking", "Credit Cards"],
+    author: {
+      name: "iear idang",
+      email: "demo@finease.com",
+      photo: "",
+    },
+    likes: 450,
+    readTime: "8 min read",
+    createdAt: new Date("2025-12-20"),
+    updatedAt: new Date("2025-12-20"),
+  },
+  {
+    title: "Financial Planning for New Parents",
+    content:
+      "Having a baby changes everything, including your budget. From diapers to college funds, here is how to prepare financially...",
+    excerpt:
+      "A checklist for new parents to secure their family's financial future.",
+    coverImage:
+      "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=1000",
+    category: "Family",
+    tags: ["Family", "Budgeting", "Kids"],
+    author: {
+      name: "Mom Finance",
+      email: "mom@example.com",
+      photo: "https://randomuser.me/api/portraits/women/20.jpg",
+    },
+    likes: 134,
+    readTime: "6 min read",
+    createdAt: new Date("2025-12-22"),
+    updatedAt: new Date("2025-12-22"),
+  },
+  {
+    title: "The Future of Digital Banking",
+    content:
+      "Physical bank branches are disappearing. Neobanks and fintech apps offer better rates and user experiences. Is it time to switch?",
+    excerpt: "Why digital-only banks are winning over the younger generation.",
+    coverImage:
+      "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1000",
+    category: "Technology",
+    tags: ["Banking", "Fintech", "Future"],
+    author: {
+      name: "Tech Guru",
+      email: "guru@example.com",
+      photo: "https://randomuser.me/api/portraits/men/45.jpg",
+    },
+    likes: 88,
+    readTime: "4 min read",
+    createdAt: new Date("2025-12-25"),
+    updatedAt: new Date("2025-12-25"),
+  },
+  {
+    title: "Avoiding Lifestyle Creep",
+    content:
+      "As you earn more, you tend to spend more. This phenomenon, known as lifestyle creep, keeps many high earners living paycheck to paycheck...",
+    excerpt: "How to maintain your savings rate even as your income grows.",
+    coverImage:
+      "https://images.unsplash.com/photo-1556742102-de682f7e34b9?auto=format&fit=crop&q=80&w=1000",
+    category: "Psychology",
+    tags: ["Lifestyle", "Wealth", "Mindset"],
+    author: {
+      name: "iear idang",
+      email: "demo@finease.com",
+      photo: "",
+    },
+    likes: 211,
+    readTime: "5 min read",
+    createdAt: new Date("2025-12-28"),
+    updatedAt: new Date("2025-12-28"),
+  },
+  {
+    title: "2026 Market Outlook",
+    content:
+      "Analysts predict a volatile year ahead. Here are the sectors to watch and the risks to hedge against in the 2026 stock market...",
+    excerpt:
+      "Expert predictions for the coming year in the global financial markets.",
+    coverImage:
+      "https://images.unsplash.com/photo-1611974765270-ca1258634369?auto=format&fit=crop&q=80&w=1000",
+    category: "Investing",
+    tags: ["Market", "Trends", "2026"],
+    author: {
+      name: "Market Analyst",
+      email: "analyst@example.com",
+      photo: "https://randomuser.me/api/portraits/men/76.jpg",
+    },
+    likes: 345,
+    readTime: "7 min read",
+    createdAt: new Date("2026-01-02"), // Recent
+    updatedAt: new Date("2026-01-02"),
   },
 ];
 
