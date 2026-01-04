@@ -51,6 +51,13 @@ This is the **backend server** for the FinEase personal finance application. It 
 - **Monthly Trends** - Year-over-year monthly comparisons
 - **Aggregation Pipelines** - Efficient MongoDB aggregations
 
+### 📝 Blog System
+
+- **Public Access** - Read-only endpoints for articles
+- **Authoring Tools** - Secured endpoints for creating/updating
+- **Rich Content Support** - Storing and retrieving HTML/Markdown
+- **Search & Filter** - Query by category and keywords
+
 ### 🛡️ Security
 
 - **Token-based Authentication** - Firebase JWT verification
@@ -108,6 +115,19 @@ This is the **backend server** for the FinEase personal finance application. It 
 }
 ```
 
+````
+
+### 📝 Blogs
+
+| Method | Endpoint             | Description              | Auth |
+| ------ | -------------------- | ------------------------ | ---- |
+| GET    | `/blogs`             | Get all blogs (Public)   | ❌   |
+| GET    | `/blogs/:id`         | Get single blog (Public) | ❌   |
+| POST   | `/blogs`             | Create new blog          | ✅   |
+| PUT    | `/blogs/:id`         | Update blog              | ✅   |
+| DELETE | `/blogs/:id`         | Delete blog              | ✅   |
+| GET    | `/blogs/user/me`     | Get my blogs             | ✅   |
+
 ### 📊 Reports
 
 | Method | Endpoint                                         | Description                | Auth |
@@ -124,7 +144,7 @@ This is the **backend server** for the FinEase personal finance application. It 
   "totalExpense": 3200,
   "balance": 1800
 }
-```
+````
 
 #### Category Response
 
@@ -402,6 +422,14 @@ const errorHandler = (err, req, res, next) => {
 
 app.use(errorHandler);
 ```
+
+---
+
+### 8. **Flexible Content Search Pattern**
+
+**Problem:** Implementing a search feature for blogs without a dedicated search engine (like ElasticSearch).
+
+**Solution:** Utilized MongoDB's Regex operator with case-insensitivity options for title and content searching, efficiently indexed for the scale of a personal finance blog.
 
 ---
 
