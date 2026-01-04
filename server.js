@@ -5,10 +5,9 @@ import cors from "cors";
 import express from "express";
 import { connectDB } from "./src/config/db.js";
 import authRoutes from "./src/routes/auth.js";
-import transactionRoutes from "./src/routes/transactions.js";
+import blogRoutes from "./src/routes/blogs.js";
 import reportRoutes from "./src/routes/reports.js";
-
-
+import transactionRoutes from "./src/routes/transactions.js";
 
 const app = express();
 
@@ -24,13 +23,14 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-app.use('/api/auth', authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/reports", reportRoutes);
+app.use("/api/blogs", blogRoutes);
 
 // Health check
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'Server is running' });
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ status: "Server is running" });
 });
 
 // Error handling middleware
