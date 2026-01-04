@@ -22,71 +22,57 @@ const DEMO_USER = {
   displayName: "iear idang",
 };
 
-const SAMPLE_TRANSACTIONS = [
-  {
-    type: "Income",
-    amount: 5000,
-    category: "Salary",
-    date: new Date().toISOString(),
-    description: "Monthly Salary from Tech Corp",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-  {
-    type: "Expense",
-    amount: 150.5,
-    category: "Groceries",
-    date: new Date(Date.now() - 86400000 * 1).toISOString(), // Yesterday
-    description: "Weekly groceries at Whole Foods",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-  {
-    type: "Expense",
-    amount: 89.99,
-    category: "Utilities",
-    date: new Date(Date.now() - 86400000 * 3).toISOString(), // 3 days ago
-    description: "Internet Bill",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-  {
-    type: "Income",
-    amount: 250,
-    category: "Freelance",
-    date: new Date(Date.now() - 86400000 * 5).toISOString(), // 5 days ago
-    description: "Logo Design Project",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-  {
-    type: "Expense",
-    amount: 45,
-    category: "Entertainment",
-    date: new Date(Date.now() - 86400000 * 7).toISOString(), // 1 week ago
-    description: "Cinema tickets",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-  {
-    type: "Expense",
-    amount: 12.5,
-    category: "Food",
-    date: new Date(Date.now() - 86400000 * 8).toISOString(),
-    description: "Coffee and bagel",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-  {
-    type: "Income",
-    amount: 1000,
-    category: "Investment",
-    date: new Date(Date.now() - 86400000 * 12).toISOString(),
-    description: "Dividend Payout",
-    userEmail: DEMO_USER.email,
-    userName: DEMO_USER.displayName,
-  },
-];
+// Helper: Get random number between min and max
+const getRandomAmount = (min, max) => {
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+};
+
+// Helper: Get random date between start and end
+const getRandomDate = (start, end) => {
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+};
+
+// Helper: Generate 50+ transactions
+const generateTransactions = () => {
+  const transactions = [];
+  const categories = [
+    { name: "Salary", type: "Income", range: [3000, 5000] },
+    { name: "Freelance", type: "Income", range: [200, 1500] },
+    { name: "Investment", type: "Income", range: [50, 500] },
+    { name: "Groceries", type: "Expense", range: [50, 300] },
+    { name: "Rent", type: "Expense", range: [1000, 1500] },
+    { name: "Utilities", type: "Expense", range: [50, 200] },
+    { name: "Transport", type: "Expense", range: [20, 100] },
+    { name: "Entertainment", type: "Expense", range: [30, 150] },
+    { name: "Health", type: "Expense", range: [50, 300] },
+    { name: "Shopping", type: "Expense", range: [50, 500] },
+    { name: "Dining Out", type: "Expense", range: [20, 100] },
+  ];
+
+  const startDate = new Date("2025-10-01");
+  const endDate = new Date(); // Today
+
+  // Ensure at least 55 transactions
+  for (let i = 0; i < 60; i++) {
+    const category = categories[Math.floor(Math.random() * categories.length)];
+    const date = getRandomDate(startDate, endDate);
+
+    transactions.push({
+      type: category.type,
+      amount: getRandomAmount(category.range[0], category.range[1]),
+      category: category.name,
+      date: date.toISOString(), // Store as ISO string initially
+      description: `${category.name} expense/income`,
+      userEmail: DEMO_USER.email,
+      userName: DEMO_USER.displayName,
+    });
+  }
+
+  // Sort by date descending
+  return transactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+};
 
 async function seed() {
   const client = new MongoClient(process.env.MONGODB_URI);
@@ -130,6 +116,9 @@ async function seed() {
     }
 
     // 3. Add Transactions
+    console.log("Generating 50+ transactions from Oct 2025 to Today...");
+    const sampleTransactions = generateTransactions();
+
     console.log("Managing transactions...");
     const collection = db.collection("transactions");
 
@@ -137,8 +126,8 @@ async function seed() {
     await collection.deleteMany({ userEmail: DEMO_USER.email });
     console.log("Cleared existing transactions for demo user.");
 
-    // Prepare data with correct Date objects
-    const transactionsWithDates = SAMPLE_TRANSACTIONS.map((t) => ({
+    // Prepare data with correct Date objects for MongoDB
+    const transactionsWithDates = sampleTransactions.map((t) => ({
       ...t,
       date: new Date(t.date),
       createdAt: new Date(),
@@ -149,7 +138,7 @@ async function seed() {
     if (transactionsWithDates.length > 0) {
       await collection.insertMany(transactionsWithDates);
       console.log(
-        `✅ Successfully added ${transactionsWithDates.length} sample transactions.`
+        `✅ Successfully added ${transactionsWithDates.length} transactions.`
       );
     }
 
